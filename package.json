@@ -1,0 +1,24 @@
+{
+  "name": "node-es6",
+  "version": "1.0.0",
+  "description": "first go at es6",
+  "main": "index.js",
+  "scripts": {
+    "build:js": "browserify src/index.js -o dist/bundle.js",
+    "build:html": "cp src/index.html dist/index.html",
+    "build": "npm-run-all build:*",
+    "watch:js": "watchify src/index.js - dist/bundle.js -v",
+    "watch:server": "nodemon --ignore node_modules/ --ignore dist/ -e js,json,html server.js",
+    "watch": "npm-run-all --parallel watch:*",
+    "test": "standard",
+    "start": "node .",
+    "postinstall": "npm run build"
+  },
+  "author": "Bernard Mordan <bernard@tableflip.io> (http://github.com/bmordan)",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "npm-run-all": "^1.2.12",
+    "watchify": "^3.5.0"
+  }
+}
