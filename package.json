@@ -7,7 +7,7 @@
     "build:js": "browserify src/index.js -o dist/bundle.js",
     "build:html": "cp src/index.html dist/index.html",
     "build": "npm-run-all build:*",
-    "watch:js": "watchify src/index.js - dist/bundle.js -v",
+    "watch:js": "watchify src/index.js -o dist/bundle.js -v",
     "watch:server": "nodemon --ignore node_modules/ --ignore dist/ -e js,json,html server.js",
     "watch": "npm-run-all --parallel watch:*",
     "test": "standard",
@@ -20,5 +20,10 @@
     "browserify": "^12.0.1",
     "npm-run-all": "^1.2.12",
     "watchify": "^3.5.0"
+  },
+  "dependencies": {
+    "hapi": "^11.0.2",
+    "inert": "^3.2.0",
+    "vision": "^3.0.0"
   }
 }
